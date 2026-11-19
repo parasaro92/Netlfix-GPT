@@ -35,8 +35,6 @@ const Login = () => {
 		if (msg) return
 
 		if (!isSignInForm) {
-			// Sign Up
-
 			createUserWithEmailAndPassword(
 				auth,
 				email.current.value,
@@ -65,7 +63,6 @@ const Login = () => {
 				});
 
 		} else {
-			// Sign In
 			signInWithEmailAndPassword(
 				auth,
 				email.current.value,
@@ -74,8 +71,6 @@ const Login = () => {
 				.then((userCredential) => {
 					// Signed in 
 					const user = userCredential.user;
-					navigate("/browse")
-					console.log(user)
 				})
 				.catch((error) => {
 					const errorCode = error.code;
