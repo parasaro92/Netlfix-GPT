@@ -1,5 +1,5 @@
 import Header from './Header';
-import { BG_URL } from '../utils/constants';
+import { BG_URL, USER_AVATAR } from '../utils/constants';
 import { useRef, useState } from 'react';
 import { checkValidData } from '../utils/validate';
 import { createUserWithEmailAndPassword, signInWithEmailAndPassword, updateProfile } from "firebase/auth";
@@ -44,7 +44,7 @@ const Login = () => {
 					// Signed up 
 					const user = userCredential.user;
 					updateProfile(user, {
-						displayName: name.current.value, photoURL: "https://avatars.githubusercontent.com/u/13597713?v=4"
+						displayName: name.current.value, photoURL: USER_AVATAR
 					}).then(() => {
 						const {uid, email, displayName, photoURL} = auth.currentUser;
 						dispatch(
